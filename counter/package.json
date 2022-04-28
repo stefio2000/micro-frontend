@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "make-app": "ng build --configuration=production --output-hashing none && for f in polyfills.js runtime.js main.js; do cp -rf dist/counter/$f sample/; done"
   },
   "private": true,
   "dependencies": {
