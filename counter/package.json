@@ -1,14 +1,18 @@
 {
-  "name": "counter",
-  "version": "0.0.0",
+  "name": "counter-web-component",
+  "description": "a simple web component doing a counter with + and -",
+  "version": "1.0.0",
+  "author": "Stéphane 'stefio2000' DAVID",
+  "license": "MIT",
+  "private": false,
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "make-app": "ng build --configuration=production --output-hashing none && for f in polyfills.js runtime.js main.js; do cp -rf dist/counter/$f ../sample-app/; done"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "~13.3.0",
     "@angular/common": "~13.3.0",

@@ -1,8 +1,8 @@
-# Counter
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.4.
-
+# Angular Web component to use with a micro frontend
+## Counter
 This is a simple web component made with Angular v13.
+
+### Dev stuff
 To use it:
 ```bash
 npm i
