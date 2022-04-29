@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
   count: number = 0;
 
   private emit(): void {
-    const event = new CustomEvent("message.important", { detail: this.count });
+    const event = new CustomEvent(AppComponent.CUSTOM_EVENT_NAME, { detail: this.count });
     window.dispatchEvent(event);
     console.log(`Counter is emitting the value <${this.count}> `);
   }
