@@ -1,0 +1,33 @@
+{
+  "name": "counter-listener-web-component",
+  "description": "a simple web component that listens window.event counter.value and display its value",
+  "version": "1.0.0",
+  "main": "build/counter-listener.js",
+  "author": "Stéphane 'stefio2000' DAVID",
+  "license": "MIT",
+  "private": false,
+  "directories": {
+    "doc": "docs",
+    "build": "build"
+  },
+  "scripts": {
+    "build": "NODE_ENV=prod rollup --config rollup.config.js",
+    "serve": "yarn build && npx http-server ./docs",
+    "make-app": "yarn build && for f in polyfills.js counter-listener.js counter-listener.js.map; do cp -rf build/$f ../sample-app/; done"
+  },
+  "dependencies": {
+    "prop-types": "^15.7.2",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-to-webcomponent": "^1.5.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-react": "^7.16.0",
+    "@rollup/plugin-babel": "^5.3.1",
+    "@rollup/plugin-commonjs": "^22.0.0",
+    "@rollup/plugin-node-resolve": "^13.2.1",
+    "rollup": "^2.70.2",
+    "rollup-plugin-replace": "2.2.0"
+  }
+}

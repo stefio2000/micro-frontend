@@ -1,0 +1,16 @@
+{
+  "name": "micro-frontends-skeleton",
+  "description": "a simple web app using 2 web components",
+  "version": "1.0.0",
+  "author": "Stéphane 'stefio2000' DAVID",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "start": "npm run make-app && http-server .",
+    "make-app": "rm *.js && rm *.map && for wc in counter counter-listener; do cd ../$wc/ && npm run make-app && cd ../sample-app; done"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}
