@@ -13,3 +13,8 @@ Typically like this:
 ```bash
 npx http-server sample-app/
 ```
+
+A npm script exists in the project, that builds everything and starts the http-server:
+```bash
+npm run start
+```

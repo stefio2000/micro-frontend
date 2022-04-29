@@ -13,7 +13,7 @@
   "scripts": {
     "build": "NODE_ENV=prod rollup --config rollup.config.js",
     "serve": "yarn build && npx http-server ./docs",
-    "make-app": "yarn build && for f in polyfills.js counter-listener.js counter-listener.js.map; do cp -rf build/$f ../sample-app/; done"
+    "make-app": "yarn build && for f in counter-listener.js counter-listener.js.map; do cp -rf build/$f ../sample-app/; done"
   },
   "dependencies": {
     "prop-types": "^15.7.2",
