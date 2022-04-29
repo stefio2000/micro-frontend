@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import CounterListener from './components/Counter';
 
 const Index = ({ startvalue }) => (
-  <div id="webcomp-counter">
+  <div>
     <span>Counter listener component in React</span>
     <CounterListener/>
   </div>
