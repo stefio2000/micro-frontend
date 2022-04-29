@@ -1,20 +1,53 @@
 <!-- sample/index.html -->
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Counter Web Component</title>
+    <title>Micro Front End</title>
     <base href="/">
-  </head>
-  <body>
-    <stefio2000-counter initial-value="123"></stefio2000-counter>
- 
-    <script type="text/javascript" src="runtime.js"></script>
-    <script type="text/javascript" src="polyfills.js"></script>
-    <script type="text/javascript" src="main.js"></script>
+    <link rel="stylesheet" href="style.css"/>
 
-    <stefio2000-counter-listener>
-    <script src="./counter-listener.js"></script>
-  </body>
+    <!-- lazy loading???-->
+    <script type="module" src="lib/counter/runtime.js"></script>
+    <script type="module" src="lib/counter/polyfills.js"></script>
+    <script type="module" src="lib/counter/main.js"></script>
+    <link rel="stylesheet" href="lib/counter/styles.css"/>
+    <script type="module" src="lib/counter-listener/counter-listener.js"></script>
+    <script type="module" src="lib/slider/runtime.js"></script>
+    <script type="application/javascript" src="lib/slider/polyfills.js"></script>
+    <script type="application/javascript" src="lib/slider/main.js"></script>
+    <link rel="stylesheet" href="lib/slider/styles.css"/>
+
+
+    <script type="application/javascript">
+        function renderMFE(mfe) {
+            console.log('renderMFE')
+            const container = document.getElementById('content');
+            let content;
+
+            if (mfe === 'counter') {
+                content = '<stefio2000-counter initial-value="123"></stefio2000-counter>'
+                    + '<stefio2000-counter-listener></stefio2000-counter-listener>';
+            } else if (mfe === 'slider') {
+                content = '<stefio2000-slider></stefio2000-slider>';
+            }
+            if (content) {
+                console.log(`rendering ${mfe} content `, content);
+                container.innerHTML = content;
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="nav">
+    <div class="nav-el">
+        <button onclick="renderMFE('counter');">Counter</button>
+    </div>
+    <div class="nav-el">
+        <button onclick="renderMFE('slider');">Slider</button>
+    </div>
+</div>
+<div id="content"></div>
+</body>
+</html>

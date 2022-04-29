@@ -1,6 +1,6 @@
 {
-  "name": "counter-web-component",
-  "description": "a simple web component doing a counter with + and -",
+  "name": "slider",
+  "description": "A simple slider as a web component",
   "version": "1.0.0",
   "author": "Stéphane 'stefio2000' DAVID",
   "license": "MIT",
@@ -11,8 +11,8 @@
     "build": "ng build --configuration=production --output-hashing none",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "clean-sample-lib": "rm -f ../sample-app/lib/counter/* || true",
-    "copy-to-sample": "for f in polyfills.js runtime.js main.js styles.css; do cp -rf dist/counter/$f ../sample-app/lib/counter/; done",
+    "clean-sample-lib": "rm -f ../sample-app/lib/slider/* || true",
+    "copy-to-sample": "for f in polyfills.js runtime.js main.js styles.css; do cp -rf dist/slider/$f ../sample-app/lib/slider/; done",
     "make-app": "npm run build && npm run clean-sample-lib && npm run copy-to-sample"
   },
   "dependencies": {
@@ -25,6 +25,7 @@
     "@angular/platform-browser": "~13.3.5",
     "@angular/platform-browser-dynamic": "~13.3.5",
     "@angular/router": "~13.3.5",
+    "@angular/material": "^13.3.5",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
@@ -41,7 +42,6 @@
     "karma-coverage": "~2.1.0",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
-    "ng-packagr": "^13.0.0",
     "typescript": "~4.6.2"
   }
 }
