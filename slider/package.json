@@ -8,11 +8,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --configuration=production --output-hashing bundles",
+    "build": "ng build --configuration=production --output-hashing none",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "clean-sample-lib": "rm -f ../sample-app/lib/slider/* || true",
-    "copy-to-sample": "for f in polyfills.*.js runtime.*.js main.*.js styles.*.css; do cp -rf dist/slider/$f ../sample-app/lib/slider/; done",
+    "copy-to-sample": "for f in polyfills.js runtime.js main.js styles.css; do cp -rf dist/slider/$f ../sample-app/lib/slider/; done",
     "make-app": "npm run build && npm run clean-sample-lib && npm run copy-to-sample"
   },
   "dependencies": {
