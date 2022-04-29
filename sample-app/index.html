@@ -15,26 +15,24 @@
     <link rel="stylesheet" href="lib/counter/styles.css"/>
     <script type="module" src="lib/counter-listener/counter-listener.js"></script>
     <script type="module" src="lib/slider/runtime.js"></script>
-    <script type="application/javascript" src="lib/slider/polyfills.js"></script>
-    <script type="application/javascript" src="lib/slider/main.js"></script>
+    <script type="module" src="lib/slider/polyfills.js"></script>
+    <script type="module" src="lib/slider/main.js"></script>
     <link rel="stylesheet" href="lib/slider/styles.css"/>
 
-
     <script type="application/javascript">
-        function renderMFE(mfe) {
-            console.log('renderMFE')
+        renderMFE = (mfe) => {
             const container = document.getElementById('content');
-            let content;
+            container.innerHTML = '';
 
             if (mfe === 'counter') {
-                content = '<stefio2000-counter initial-value="123"></stefio2000-counter>'
-                    + '<stefio2000-counter-listener></stefio2000-counter-listener>';
+                const counter = document.createElement('stefio2000-counter');
+                counter.setAttribute('initial-value', '124');
+                const listener = document.createElement('stefio2000-counter-listener');
+                container.appendChild(counter);
+                container.appendChild(listener);
             } else if (mfe === 'slider') {
-                content = '<stefio2000-slider></stefio2000-slider>';
-            }
-            if (content) {
-                console.log(`rendering ${mfe} content `, content);
-                container.innerHTML = content;
+                const slider = document.createElement('stefio2000-slider');
+                container.appendChild(slider);
             }
         }
     </script>
