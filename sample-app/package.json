@@ -6,8 +6,9 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "start": "npm run make-app && http-server .",
-    "make-app": "rm *.js && rm *.map && for wc in counter counter-listener; do cd ../$wc/ && npm run make-app && cd ../sample-app; done"
+    "start": "npm run make-app && npm run serve",
+    "serve": "http-server .",
+    "make-app": "for wc in counter counter-listener slider; do cd ../$wc/ && npm run make-app && cd ../sample-app; done"
   },
   "dependencies": {
   },

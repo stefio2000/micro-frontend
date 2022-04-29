@@ -6,7 +6,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "counter": {
+    "slider": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -23,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/counter",
+            "outputPath": "dist/slider",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -34,7 +34,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              {
+                "input": "node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css"
+              }
             ],
             "scripts": []
           },
@@ -48,8 +51,8 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "75kb",
+                  "maximumError": "100kb"
                 }
               ],
               "fileReplacements": [
@@ -75,10 +78,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "counter:build:production"
+              "browserTarget": "slider:build:production"
             },
             "development": {
-              "browserTarget": "counter:build:development"
+              "browserTarget": "slider:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -86,7 +89,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "counter:build"
+            "browserTarget": "slider:build"
           }
         },
         "test": {
@@ -110,5 +113,5 @@
       }
     }
   },
-  "defaultProject": "counter"
+  "defaultProject": "slider"
 }
